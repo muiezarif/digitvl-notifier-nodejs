@@ -9,7 +9,7 @@ admin.initializeApp({
 app.post("/send-notification",(req,res)=> {
     console.log(req.body)
     const message = {
-        data:{
+        notification:{
             title:"req.body.title",
             body:"req.body.message"
         },
