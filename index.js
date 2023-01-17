@@ -10,11 +10,11 @@ app.post("/send-notification",(req,res)=> {
     console.log(req.body)
     const message = {
         notification:{
-            title:"req.body.title",
-            body:"req.body.message"
+            title:req.body.title,
+            body:req.body.body
         },
         data:{
-            url:"req.body.message"
+            url:req.body.message
         },
         tokens:req.body.tokens
     }
