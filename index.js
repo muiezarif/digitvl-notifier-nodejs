@@ -14,6 +14,8 @@ app.post("/send-notification",(req,res)=> {
             body:req.body.body
         },
         data:{
+            title:req.body.title,
+            body:req.body.body,
             url:req.body.url
         },
         tokens:req.body.tokens
