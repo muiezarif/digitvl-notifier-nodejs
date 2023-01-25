@@ -14,6 +14,8 @@ app.post("/send-notification",(req,res)=> {
             body:req.body.body
         },
         data:{
+            title:req.body.title,
+            body:req.body.body,
             url:req.body.url
         },
         tokens:req.body.tokens
@@ -28,6 +30,6 @@ app.post("/send-notification",(req,res)=> {
         console.log(err.message)
     })
 })
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 3030, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   });
