@@ -2,18 +2,22 @@ const admin = require("firebase-admin");
 const express = require("express");
 const serviceAccount = require("./digitvl-notifier-firebase-adminsdk-7wtz1-5e3213f526.json");
 const app = express();
-// const cors=require("cors");
-// const corsOptions ={
-//    origin:'*', 
-//    credentials:false,            //access-control-allow-credentials:true
-//    optionSuccessStatus:200,
-// }
+const cors=require("cors");
+// var bodyParser = require('body-parser');
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+// app.use(bodyParser.json());
+
 app.use(express.json())
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
 app.post("/send-notification",(req,res)=> {
+    console.log("Request body")
     console.log(req.body)
     const message = {
         notification:{
