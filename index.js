@@ -22,14 +22,20 @@ app.post("/send-notification",(req,res)=> {
     const message = {
         notification:{
             title:req.body.title,
-            body:req.body.body,
-            "sound":"default"
+            body:req.body.body
         },
         data:{
             title:req.body.title,
             body:req.body.body,
             url:req.body.url,
             coins:req.body.coins
+        },
+        apns:{
+            payload:{
+                apns:{
+                    sound:"default"
+                }
+            }
         },
         tokens:req.body.tokens
     }
