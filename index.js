@@ -22,7 +22,8 @@ app.post("/send-notification",(req,res)=> {
     const message = {
         notification:{
             title:req.body.title,
-            body:req.body.body
+            body:req.body.body,
+            sound:"default"
         },
         data:{
             title:req.body.title,
