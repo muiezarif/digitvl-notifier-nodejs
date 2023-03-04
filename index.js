@@ -32,7 +32,7 @@ app.post("/send-notification",(req,res)=> {
         },
         apns:{
             payload:{
-                apns:{
+                aps:{
                     sound:"default"
                 }
             }
