@@ -23,7 +23,7 @@ app.post("/send-notification",(req,res)=> {
         notification:{
             title:req.body.title,
             body:req.body.body,
-            sound:"default"
+            "sound":"default"
         },
         data:{
             title:req.body.title,
