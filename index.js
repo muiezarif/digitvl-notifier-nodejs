@@ -43,7 +43,10 @@ app.post("/send-notification",(req,res)=> {
     admin.messaging().sendMulticast(message).then(res => {
         console.log("response")
         console.log(res)
-        console.log(res.responses[0].error.message)
+        if(res.responses[0].error.message){
+            console.log(res.responses[0].error.message)
+        }
+        
     }).catch(err => {
         console.log("error")
         console.log(err.message)
